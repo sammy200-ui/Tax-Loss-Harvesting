@@ -56,7 +56,7 @@ const CapitalGainsCard = ({
 
       {variant === 'blue' && savingsAmount !== null && savingsAmount > 0 && (
         <div className="cg-savings">
-          🎉 You are going to save upto <strong>{formatCurrency(savingsAmount)}</strong>
+          🎉 You are going to save upto {formatCurrency(savingsAmount)}
         </div>
       )}
     </div>

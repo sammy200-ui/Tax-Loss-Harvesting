@@ -4,12 +4,12 @@ export function getCapitalGains() {
       resolve({
         capitalGains: {
           stcg: {
-            profits: 70200.88,
-            losses: 1548.53,
+            profits: 1540,
+            losses: 743,
           },
           ltcg: {
-            profits: 5020,
-            losses: 3050,
+            profits: 1200,
+            losses: 650,
           },
         },
       });
