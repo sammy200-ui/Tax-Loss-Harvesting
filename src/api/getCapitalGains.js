@@ -1,18 +1,18 @@
-export function getCapitalGains() {
+export const getCapitalGains = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
         capitalGains: {
           stcg: {
-            profits: 1540,
-            losses: 743,
+            profits: 70200.88,
+            losses: 1548.53
           },
           ltcg: {
-            profits: 1200,
-            losses: 650,
-          },
-        },
+            profits: 5020,
+            losses: 3050
+          }
+        }
       });
-    }, 600);
+    }, 500);
   });
-}
+};

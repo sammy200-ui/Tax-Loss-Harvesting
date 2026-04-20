@@ -140,8 +140,21 @@
 }
 
 @media (max-width: 768px) {
+  .app-header {
+    padding: 16px;
+  }
+  .app-main {
+    padding: 16px;
+  }
   .cards-container {
     flex-direction: column;
+    gap: 16px;
+  }
+  .holdings-section {
+    padding: 16px 0 0 0;
+  }
+  .holdings-section h2 {
+    margin: 0 0 0 16px;
   }
 }
 

@@ -6,19 +6,18 @@ import './HoldingsTable.css';
 const HoldingsTable = () => {
   const { holdings, selectedIds, toggleSelected, toggleAll } = useContext(HarvestContext);
   const [showAll, setShowAll] = useState(false);
-  const [stcgSortDir, setStcgSortDir] = useState(null); // null, 'asc', 'desc'
+  const [stcgSortDir, setStcgSortDir] = useState(null); // null, 'desc', 'asc'
 
   const handleSortStcg = () => {
-    if (stcgSortDir === null) setStcgSortDir('asc');
-    else if (stcgSortDir === 'asc') setStcgSortDir('desc');
-    else setStcgSortDir(null);
+    setStcgSortDir(prev => prev === 'desc' ? 'asc' : 'desc');
   };
 
   const getSortedHoldings = () => {
     if (!stcgSortDir) return holdings;
     return [...holdings].sort((a, b) => {
-      if (stcgSortDir === 'asc') return a.stcg.gain - b.stcg.gain;
-      return b.stcg.gain - a.stcg.gain;
+      const diff = stcgSortDir === 'asc' ? a.stcg.gain - b.stcg.gain : b.stcg.gain - a.stcg.gain;
+      if (diff === 0) return a.coin.localeCompare(b.coin); // Deterministic tiebreaker!
+      return diff;
     });
   };
 

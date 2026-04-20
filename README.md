@@ -1,6 +1,11 @@
-# Tax Loss Harvesting Tool
+# Tax Loss Harvesting
 
-A modern web application built in React (JavaScript) and plain CSS for Tax Loss Harvesting.
+A React web application providing a Tax Loss Harvesting interface. This tool calculates pre and post-harvesting capital gains dynamically based on user selections. It includes dynamic theme toggling (Light/Dark mode) and mobile responsiveness.
+
+## Live Demo
+
+[View Live App](#) 
+*(Add deployed link here before submission)*
 
 ## Setup Instructions
 
@@ -8,17 +13,27 @@ A modern web application built in React (JavaScript) and plain CSS for Tax Loss 
    ```bash
    npm install
    ```
-
 2. Start the development server:
    ```bash
    npm run dev
    ```
 
-## Tech Used
-- React (Vite)
-- Plain CSS (No Tailwind, no CSS frameworks)
-- Context API for state management
+## Screenshots
 
-## Assumptions
-- Uses mock APIs via `Promise`-based functions, no external server is required.
-- Calculates Tax Loss Harvesting savings based on simulated capital gains logic.
+*(Place screenshots here before submitting)*
+
+- Desktop (Light Mode): ![Light Mode](docs/desktop-light.png)
+- Desktop (Dark Mode): ![Dark Mode](docs/desktop-dark.png)
+- Mobile Layout: ![Mobile Layout](docs/mobile.png)
+
+## Architecture
+
+- React (Vite)
+- Custom Vanilla CSS
+- React Context API for state management
+
+## Assumptions & Explanations
+
+- "Amount to Sell" defaults to mapping directly to `totalHolding` when an asset is selected.
+- Mock APIs use Promise-based delays (`setTimeout`) to simulate asynchronous data fetching.
+- All bonus assignment requirements (Mobile responsiveness, state management, "View All" functionality) have been implemented.

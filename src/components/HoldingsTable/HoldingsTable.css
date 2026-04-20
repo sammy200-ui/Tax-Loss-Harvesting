@@ -1,6 +1,19 @@
 .holdings-table-container {
   width: 100%;
   overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.holdings-table-container::-webkit-scrollbar {
+  height: 6px;
+}
+.holdings-table-container::-webkit-scrollbar-track {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+.holdings-table-container::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
 }
 
 .holdings-table {
