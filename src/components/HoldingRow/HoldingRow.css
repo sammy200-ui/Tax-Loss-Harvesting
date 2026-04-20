@@ -1,0 +1,82 @@
+.holding-row {
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.holding-row:hover {
+  background-color: #f9fafb;
+}
+
+.holding-row.selected {
+  background-color: #eff6ff;
+}
+
+.col-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #3b82f6;
+  margin: 0;
+}
+
+.asset-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.asset-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.asset-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.asset-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.holding-subtext {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.holding-amount {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.col-value {
+  font-weight: 600;
+  color: #111827;
+}
+
+.holdings-gain-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.text-green {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.text-red {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.col-sell {
+  color: #374151;
+  font-weight: 500;
+}

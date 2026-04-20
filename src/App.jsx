@@ -3,6 +3,7 @@ import './App.css';
 import { HarvestContext } from './context/HarvestContext';
 import Loader from './components/Loader/Loader';
 import CapitalGainsCard from './components/CapitalGainsCard/CapitalGainsCard';
+import HoldingsTable from './components/HoldingsTable/HoldingsTable';
 
 function App() {
   const { capitalGains, afterHarvestGains, loading, error } = useContext(HarvestContext);
@@ -84,7 +85,7 @@ function App() {
         
         <div className="holdings-section">
           <h2>Holdings</h2>
-          <div className="holdings-placeholder">Holdings table will be implemented in Phase 3</div>
+          <HoldingsTable />
         </div>
       </main>
     </div>

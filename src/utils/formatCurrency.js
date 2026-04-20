@@ -8,7 +8,12 @@ export function formatCurrency(value, useCents = false) {
     maximumFractionDigits: useCents ? 2 : 0,
   }).format(absoluteValue);
 
-  return `$ ${formatted}`;
+  return `$${formatted}`;
+}
+
+export function formatCoinAmount(value) {
+  if (value === null || value === undefined) return "—";
+  return Number(value).toLocaleString("en-US", { maximumFractionDigits: 5 });
 }
 
 export function formatNumber(value, decimals = 6) {
