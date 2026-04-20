@@ -1,10 +1,14 @@
-export function formatCurrency(value) {
+export function formatCurrency(value, useCents = false) {
   if (value === null || value === undefined) return "—";
-  return new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 2,
-  }).format(value);
+  const numValue = Number(value);
+  const absoluteValue = Math.abs(numValue);
+  
+  const formatted = new Intl.NumberFormat("en-US", {
+    minimumFractionDigits: useCents ? 2 : 0,
+    maximumFractionDigits: useCents ? 2 : 0,
+  }).format(absoluteValue);
+
+  return `$ ${formatted}`;
 }
 
 export function formatNumber(value, decimals = 6) {

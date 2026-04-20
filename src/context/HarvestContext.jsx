@@ -50,7 +50,6 @@ export function HarvestProvider({ children }) {
     }
   };
 
-  // Compute afterHarvestGains
   let afterHarvestGains = null;
   if (capitalGains) {
     afterHarvestGains = {

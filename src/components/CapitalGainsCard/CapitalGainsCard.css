@@ -1,0 +1,102 @@
+.capital-gains-card {
+  flex: 1;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.capital-gains-card.light {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+}
+
+.capital-gains-card.blue {
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  color: #ffffff;
+}
+
+.cg-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.cg-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.cg-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+  min-width: 100px;
+}
+
+.cg-header {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.cg-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.empty-label {
+  height: 19px;
+  margin-bottom: 8px;
+}
+
+.cg-value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cg-net {
+  font-weight: 600;
+}
+
+.light .cg-net {
+  color: #111827;
+}
+.blue .cg-net {
+  color: #ffffff;
+}
+
+.cg-footer {
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.cg-footer-label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 16px;
+}
+
+.cg-footer-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cg-savings {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
