@@ -6,9 +6,24 @@ import './HoldingsTable.css';
 const HoldingsTable = () => {
   const { holdings, selectedIds, toggleSelected, toggleAll } = useContext(HarvestContext);
   const [showAll, setShowAll] = useState(false);
+  const [stcgSortDir, setStcgSortDir] = useState(null); // null, 'asc', 'desc'
 
-  // We show 5 by default as per phase 3 specifics
-  const displayedHoldings = showAll ? holdings : holdings.slice(0, 5);
+  const handleSortStcg = () => {
+    if (stcgSortDir === null) setStcgSortDir('asc');
+    else if (stcgSortDir === 'asc') setStcgSortDir('desc');
+    else setStcgSortDir(null);
+  };
+
+  const getSortedHoldings = () => {
+    if (!stcgSortDir) return holdings;
+    return [...holdings].sort((a, b) => {
+      if (stcgSortDir === 'asc') return a.stcg.gain - b.stcg.gain;
+      return b.stcg.gain - a.stcg.gain;
+    });
+  };
+
+  const sortedHoldings = getSortedHoldings();
+  const displayedHoldings = showAll ? sortedHoldings : sortedHoldings.slice(0, 5);
   const allSelected = holdings.length > 0 && selectedIds.size === holdings.length;
 
   return (
@@ -29,7 +44,14 @@ const HoldingsTable = () => {
               <div className="th-subtext">Current Market Rate</div>
             </th>
             <th className="col-value">Total Current Value</th>
-            <th className="col-stcg">Short-term</th>
+            <th className="col-stcg" style={{ cursor: 'pointer', userSelect: 'none' }} onClick={handleSortStcg}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '10px', color: stcgSortDir ? 'var(--info-icon)' : 'var(--text-muted)' }}>
+                  {stcgSortDir === 'desc' ? '▼' : '▲'}
+                </span>
+                Short-term
+              </div>
+            </th>
             <th className="col-ltcg">Long-Term</th>
             <th className="col-sell">Amount to Sell</th>
           </tr>

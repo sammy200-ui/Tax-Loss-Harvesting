@@ -7,7 +7,8 @@ import HoldingsTable from './components/HoldingsTable/HoldingsTable';
 
 function App() {
   const { capitalGains, afterHarvestGains, loading, error, theme, toggleTheme } = useContext(HarvestContext);
-  const [disclaimerOpen, setDisclaimerOpen] = useState(true);
+  const [disclaimerOpen, setDisclaimerOpen] = useState(false);
+  const [showHowItWorks, setShowHowItWorks] = useState(false);
 
   if (loading || !capitalGains) {
     return <Loader />;
@@ -46,8 +47,20 @@ function App() {
       <main className="app-main">
         <div className="page-header">
           <h1>Tax Harvesting</h1>
-          <a href="#" className="how-it-works">How it works?</a>
+          <button 
+            className="how-it-works" 
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }} 
+            onClick={() => setShowHowItWorks(!showHowItWorks)}
+          >
+            How it works?
+          </button>
         </div>
+
+        {showHowItWorks && (
+          <div style={{ marginBottom: '24px', padding: '16px', backgroundColor: 'var(--accordion-bg)', border: '1px solid var(--accordion-border)', borderRadius: '6px', fontSize: '13px', color: 'var(--accordion-text-c)', lineHeight: 1.6 }}>
+            <strong>How Tax Harvesting Works:</strong> Tax-loss harvesting is the practice of selling a security that has experienced a loss. By realizing, or "harvesting" a loss, investors are able to offset taxes on both gains and income. The sold security is replaced by a similar one, maintaining the optimal asset allocation and expected returns.
+          </div>
+        )}
 
         <div className={`disclaimer-accordion ${disclaimerOpen ? 'open' : ''}`}>
           <div className="disclaimer-header" onClick={() => setDisclaimerOpen(!disclaimerOpen)}>
