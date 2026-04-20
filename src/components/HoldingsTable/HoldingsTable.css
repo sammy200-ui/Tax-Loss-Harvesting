@@ -12,21 +12,22 @@
 .holdings-table th,
 .holdings-table td {
   padding: 16px 24px;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid var(--border-color);
   font-size: 14px;
+  color: var(--text-main);
 }
 
 .holdings-table th {
-  background-color: #f9fafb;
+  background-color: var(--table-header-bg);
   font-weight: 600;
-  color: #374151;
+  color: var(--text-th);
   text-align: center;
 }
 
 .th-subtext {
   font-size: 11px;
   font-weight: 400;
-  color: #9ca3af;
+  color: var(--text-muted);
   margin-top: 4px;
 }
 
@@ -68,7 +69,7 @@
 .view-all-btn {
   background: none;
   border: none;
-  color: #3b82f6;
+  color: var(--link-color);
   text-decoration: underline;
   font-size: 14px;
   cursor: pointer;
@@ -77,5 +78,5 @@
 }
 
 .view-all-btn:hover {
-  color: #2563eb;
+  color: var(--link-hover);
 }

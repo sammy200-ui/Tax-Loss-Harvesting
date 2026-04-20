@@ -7,13 +7,13 @@
 }
 
 .capital-gains-card.light {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  color: #111827;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
 }
 
 .capital-gains-card.blue {
-  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: #ffffff;
 }
 
@@ -71,14 +71,15 @@
 }
 
 .light .cg-net {
-  color: #111827;
+  color: var(--text-main);
 }
+
 .blue .cg-net {
   color: #ffffff;
 }
 
 .cg-footer {
-  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  border-top: 1px solid var(--footer-border);
   padding-top: 24px;
   display: flex;
   align-items: center;

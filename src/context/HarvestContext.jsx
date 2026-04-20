@@ -10,6 +10,11 @@ export function HarvestProvider({ children }) {
   const [selectedIds, setSelectedIds] = useState(new Set());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     async function fetchData() {
@@ -50,6 +55,10 @@ export function HarvestProvider({ children }) {
     }
   };
 
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
   let afterHarvestGains = null;
   if (capitalGains) {
     afterHarvestGains = {
@@ -78,7 +87,9 @@ export function HarvestProvider({ children }) {
       toggleAll,
       afterHarvestGains,
       loading,
-      error
+      error,
+      theme,
+      toggleTheme
     }}>
       {children}
     </HarvestContext.Provider>

@@ -6,7 +6,7 @@ import CapitalGainsCard from './components/CapitalGainsCard/CapitalGainsCard';
 import HoldingsTable from './components/HoldingsTable/HoldingsTable';
 
 function App() {
-  const { capitalGains, afterHarvestGains, loading, error } = useContext(HarvestContext);
+  const { capitalGains, afterHarvestGains, loading, error, theme, toggleTheme } = useContext(HarvestContext);
   const [disclaimerOpen, setDisclaimerOpen] = useState(true);
 
   if (loading || !capitalGains) {
@@ -37,6 +37,9 @@ function App() {
           <div className="logo-container">
             <span className="logo-koin">Koin</span><span className="logo-x">X</span><span className="logo-tm">™</span>
           </div>
+          <button onClick={toggleTheme} className="theme-toggle-btn">
+            {theme === 'dark' ? 'Light' : 'Dark'}
+          </button>
         </div>
       </header>
       
