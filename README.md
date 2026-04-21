@@ -20,7 +20,7 @@ A React web application providing a Tax Loss Harvesting interface. This tool cal
 
 ## Screenshots
 
-*(Place screenshots here before submitting)*
+
 
 - Desktop (Light Mode): ![Light Mode](docs/desktop-light.png)
 - Desktop (Dark Mode): ![Dark Mode](docs/desktop-dark.png)

@@ -68,7 +68,11 @@ function App() {
               <span className="info-icon">ⓘ</span>
               <strong>Important Notes & Disclaimers</strong>
             </div>
-            <span className="chevron-icon">{disclaimerOpen ? 'ʌ' : 'v'}</span>
+            <span className="chevron-icon">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: disclaimerOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
           </div>
           {disclaimerOpen && (
             <div className="disclaimer-content">
