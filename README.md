@@ -4,8 +4,8 @@ A React web application providing a Tax Loss Harvesting interface. This tool cal
 
 ## Live Demo
 
-[View Live App](#) 
-*(https://lambent-puffpuff-91dd3c.netlify.app/)*
+[View Live App](https://lambent-puffpuff-91dd3c.netlify.app/) 
+
 
 ## Setup Instructions
 
